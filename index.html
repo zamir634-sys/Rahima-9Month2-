@@ -147,26 +147,42 @@
 
         /* Professional Clock Box */
         .today-box {
+          
+          touch-action: pan-y; /* Isse swipe smooth hoga */
+
+          
             background: linear-gradient(135deg, #a2d2ff, #7ab6ff);
-            padding: 20px;
+            padding: 10px;
             border-radius: 24px;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.05), 0 10px 20px rgba(122, 182, 255, 0.3);
         }
+.date-display { 
+    font-weight: 700; 
+    font-size: 1.5rem; 
+    /* Naya color jo har light background par dikhega */
+    color: #2c3e50; 
+    background: rgba(255,255,255,0.4); 
+    padding: 6px 15px; 
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* Isse text chamkega */
+}
 
-        .date-display { 
-            font-weight: 700; 
-            font-size: 1.5rem; 
-            background: rgba(255,255,255,0.2); 
-            padding: 4px 12px; 
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-        }
+#show-day {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 2px;
+    color: #34495e; /* Day ka thoda alag shade */
+    text-transform: capitalize;
+}
+
 
         /* Professional Analog Clock UI */
         .analog-clock {
@@ -293,6 +309,67 @@
         .theme-dots { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; max-width: 200px; }
         .dot { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
         .dot.active { border-color: #333; transform: scale(1.2); }
+        
+        /* Naya Stylish Clock Design */
+.analog-clock.design-2 {
+    background: radial-gradient(circle, #2c3e50, #000000);
+    border: 6px solid #55efc4; /* Neon green border */
+    box-shadow: 0 0 20px rgba(85, 239, 196, 0.4);
+}
+
+.design-2 .clock-number { color: #55efc4; font-family: 'Courier New', monospace; }
+.design-2 .hour-hand { background: #55efc4; width: 4px; }
+.design-2 .min-hand { background: #fff; }
+
+        
+       /* --- 12 New Stylish Clock Designs --- */
+.analog-clock.design-1 { background: white; border-color: #ff85a2; } /* Original Pink */
+.analog-clock.design-2 { background: #1a1a1a; border-color: #00d2ff; } /* Cyber Blue */
+.analog-clock.design-3 { background: #fff5f7; border-color: #ff4d4d; } /* Soft Red */
+.analog-clock.design-4 { background: #2d3436; border-color: #fab1a0; } /* Peach Dark */
+.analog-clock.design-5 { background: linear-gradient(145deg, #f0f0f0, #cacaca); border-color: #333; } /* Silver */
+.analog-clock.design-6 { background: #000; border-color: #ffd700; } /* Luxury Gold */
+.analog-clock.design-7 { background: #6c5ce7; border-color: #fff; } /* Royal Purple */
+.analog-clock.design-8 { background: #e8f5e9; border-color: #4caf50; } /* Nature Green */
+.analog-clock.design-9 { background: #30336b; border-color: #ffbe76; } /* Deep Night */
+.analog-clock.design-10 { background: #f9f9f9; border: 8px dashed #ff85a2; } /* Cute Dashed */
+.analog-clock.design-11 { background: #000; border: 5px double #00ff00; } /* Matrix Green */
+.analog-clock.design-12 { background: #fff; border-radius: 40%; border-color: #7ab6ff; } /* Soft Square */
+
+/* Custom hand colors for some designs */
+.design-2 .hour-hand, .design-2 .min-hand { background: #00d2ff; }
+.design-6 .hour-hand, .design-6 .min-hand { background: #ffd700; }
+.design-11 .hour-hand, .design-11 .min-hand { background: #00ff00; }
+ /* --- 50+ Stylish Clock Themes --- */
+.clock-t1 { background: #fff; border-color: #ff85a2; }
+.clock-t2 { background: #1a1a1a; border-color: #00d2ff; }
+.clock-t3 { background: #2d3436; border-color: #fab1a0; }
+.clock-t4 { background: #6c5ce7; border-color: #a29bfe; }
+.clock-t5 { background: #00b894; border-color: #55efc4; }
+.clock-t6 { background: #000; border-color: #ffd700; box-shadow: 0 0 15px #ffd700; }
+.clock-t7 { background: linear-gradient(45deg, #ff9a9e, #fad0c4); border-color: #fff; }
+.clock-t8 { background: linear-gradient(45deg, #a1c4fd, #c2e9fb); border-color: #fff; }
+.clock-t9 { background: #30336b; border-color: #f0932b; }
+.clock-t10 { background: #eb4d4b; border-color: #fff; }
+/* ... Isi tarah 50 tak colors loop mein badlenge ... */
+
+/* Clock Hands Colors */
+.clock-t2 .hour-hand, .clock-t2 .min-hand { background: #00d2ff; }
+.clock-t6 .hour-hand, .clock-t6 .min-hand { background: #ffd700; }
+
+/* Flower ghumne ka animation */
+@keyframes flowerSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin-animation {
+    display: inline-block; /* Ghumne ke liye zaroori hai */
+    animation: flowerSpin 2s linear infinite;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -390,7 +467,10 @@
         <button class="btn-reset" onclick="openResetModal()">RESET ALL DATA</button>
     </div>
 
-    <h2 id="main-title">Pregnancy Journey 🌸</h2>
+    <h2 id="main-title" onclick="spinFlower()">
+    Pregnancy Journey <span id="flower-icon" style="display:inline-block; cursor:pointer;">🌸</span>
+</h2>
+
     <div id="father-name-display"></div> <div class="settings-area">
         <div class="input-row">
             <div class="input-group">
@@ -411,7 +491,12 @@
     </div>
 
     <div class="today-box">
-        <div class="date-display">📅 <span id="show-today">--/--/----</span></div>
+        
+        <div class="date-display">
+    📅 <span id="show-today">--/--/----</span>
+    <div id="show-day" style="font-size: 0.85rem; font-weight: 500; margin-top: 2px;">Day</div>
+</div>
+
         
         <div id="analog-ui" class="analog-clock">
             <div class="hand hour-hand" id="hour-hand"></div>
@@ -447,6 +532,9 @@
 <script>
     window.onload = function() {
         createClockMarkers();
+        
+        designIndex = parseInt(localStorage.getItem('lastDesignIndex')) || 0;
+
         
         document.getElementById('input-start').value = localStorage.getItem('pregStart') || "2025-08-18";
         document.getElementById('input-due').value = localStorage.getItem('pregDue') || "2026-05-31";
@@ -525,29 +613,42 @@
         
         applySettingsUI();
     }
+    
 
-    function applySettingsUI() {
-        const isDigital = document.getElementById('digital-clock-toggle').checked;
-        document.getElementById('digital-ui').style.display = isDigital ? 'block' : 'none';
-        document.getElementById('analog-ui').style.display = isDigital ? 'none' : 'block';
-        
-        document.getElementById('extra-box-ui').style.display = document.getElementById('show-extra-toggle').checked ? 'block' : 'none';
-        
-        const bName = document.getElementById('baby-name-input').value;
-        document.getElementById('main-title').innerText = bName ? bName + " 🌸" : "Pregnancy Journey 🌸";
+function applySettingsUI() {
+    const isDigital = document.getElementById('digital-clock-toggle').checked;
+    document.getElementById('digital-ui').style.display = isDigital ? 'block' : 'none';
+    const analogUI = document.getElementById('analog-ui');
+    analogUI.style.display = isDigital ? 'none' : 'block';
+    
+    document.getElementById('extra-box-ui').style.display = document.getElementById('show-extra-toggle').checked ? 'block' : 'none';
+    
+    // Flower Spin HTML ke saath Name update
+    const bName = document.getElementById('baby-name-input').value || "Pregnancy Journey";
+    document.getElementById('main-title').innerHTML = `${bName} <span id="flower-icon" onclick="spinFlower()" style="display:inline-block; cursor:pointer;">🌸</span>`;
 
-        // Father's Name UI Logic
-        const fName = document.getElementById('father-name-input').value;
-        const showFather = document.getElementById('show-father-toggle').checked;
-        const fatherDisplay = document.getElementById('father-name-display');
-        
-        if(showFather && fName) {
-            fatherDisplay.innerText = "Father: " + fName;
-            fatherDisplay.style.display = "block";
-        } else {
-            fatherDisplay.style.display = "none";
-        }
+    const savedDesign = localStorage.getItem('lastDesignStyle');
+    if (savedDesign && !isDigital) {
+        const style = JSON.parse(savedDesign);
+        analogUI.style.background = style.bg;
+        analogUI.style.borderColor = style.border;
+        analogUI.style.boxShadow = style.shadow;
+        document.getElementById('hour-hand').style.background = style.hand;
     }
+
+    const fName = document.getElementById('father-name-input').value;
+    const showFather = document.getElementById('show-father-toggle').checked;
+    const fatherDisplay = document.getElementById('father-name-display');
+    
+    if(showFather && fName) {
+        fatherDisplay.innerText = "Father: " + fName;
+        fatherDisplay.style.display = "block";
+    } else {
+        fatherDisplay.style.display = "none";
+    }
+}
+
+
 
     function openResetModal() { document.getElementById('reset-modal').style.display = 'flex'; }
     function closeResetModal() { document.getElementById('reset-modal').style.display = 'none'; }
@@ -583,6 +684,10 @@
         const today = new Date();
         today.setHours(0,0,0,0);
         document.getElementById('show-today').innerText = today.toLocaleDateString('en-GB');
+        
+        const dayOptions = { weekday: 'long' };
+document.getElementById('show-day').innerText = today.toLocaleDateString('en-US', dayOptions);
+
 
         const diffPast = today - start;
         const diffRem = finalDue - today;
@@ -608,7 +713,100 @@
         localStorage.setItem('pregDue', dueVal);
         localStorage.setItem('extraRem', exRem);
     }
+    
+    // --- Swipe Logic Start ---
+
+// --- Advanced Swipe & Multi-Design Logic ---
+// --- 100+ Design Swipe System ---
+let touchstartX = 0;
+let touchendX = 0;
+let designIndex = 0; // Design counter
+
+const clockArea = document.querySelector('.today-box');
+const analogClock = document.getElementById('analog-ui');
+
+clockArea.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+});
+
+clockArea.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    handleNewSwipe();
+});
+
+
+function handleNewSwipe() {
+    let diff = touchendX - touchstartX;
+
+    // Agar 50 pixel se zyada swipe hua hai
+    if (Math.abs(diff) > 50) {
+        
+        // 1. Digital clock ko hamesha band rakhein (Swipe se sirf Analog badlega)
+        document.getElementById('digital-clock-toggle').checked = false;
+        saveSettings(); // Isse lifetime setting save rahegi
+        applySettingsUI();
+
+        // 2. Direction check karein: Left swipe (Next) aur Right swipe (Previous)
+        if (diff < -50) {
+            // Ungli Right se Left gayi (Next Design)
+            designIndex++;
+        } else {
+            // Ungli Left se Right gayi (Previous Design)
+            designIndex--;
+            if (designIndex < 0) designIndex = 0; // 0 se niche na jaye
+        }
+
+        // 3. Naya Design Calculate karein
+        const hue = (designIndex * 37) % 360; 
+        const saturation = 60 + (designIndex % 40); 
+        
+        const newStyle = {
+            bg: `hsl(${hue}, ${saturation}%, 15%)`,
+            border: `hsl(${hue}, ${saturation}%, 70%)`,
+            shadow: `0 0 25px hsl(${hue}, ${saturation}%, 50%, 0.5)`,
+            hand: `hsl(${hue}, ${saturation}%, 80%)`
+        };
+
+        // 4. Screen par design apply karein
+        const analogClock = document.getElementById('analog-ui');
+        analogClock.style.background = newStyle.bg;
+        analogClock.style.borderColor = newStyle.border;
+        analogClock.style.boxShadow = newStyle.shadow;
+        document.getElementById('hour-hand').style.background = newStyle.hand;
+        document.getElementById('sec-hand').style.background = '#ff4d4d';
+
+        // 5. Lifetime ke liye save karein
+        localStorage.setItem('lastDesignStyle', JSON.stringify(newStyle));
+        localStorage.setItem('lastDesignIndex', designIndex);
+        
+        if (navigator.vibrate) navigator.vibrate(25);
+        console.log("Episode: " + designIndex);
+    }
+}
+
+
+
+
+
+// --- Swipe Logic End ---
+
+
+function spinFlower() {
+    const flower = document.getElementById('flower-icon');
+    
+    // Agar pehle se ghum raha hai toh rok do, nahi toh shuru karo
+    if (flower.classList.contains('spin-animation')) {
+        flower.classList.remove('spin-animation');
+    } else {
+        flower.classList.add('spin-animation');
+        
+        // Choti si vibration feel hogi click par
+        if (navigator.vibrate) navigator.vibrate(50);
+    }
+}
+
+    
 </script>
 
 </body>
-</html>
+                </html>

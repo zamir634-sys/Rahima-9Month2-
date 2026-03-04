@@ -29,7 +29,7 @@
 
         .container {
             background: var(--container-bg);
-            padding: 15px; /* Reduced for better fit */
+            padding: 20px;
             border-radius: 28px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             width: 92%;
@@ -49,16 +49,18 @@
             opacity: 0.7;
         }
 
-        h2 { color: var(--primary-color); margin: 5px 0 2px 0; font-size: 1.3rem; transition: color 0.3s; }
+        h2 { color: var(--primary-color); margin: 5px 0 5px 0; font-size: 1.4rem; transition: color 0.3s; }
         
+        /* New styling for Father's Name display */
         #father-name-display {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             font-weight: 500;
             display: none;
         }
 
+        /* Settings Panel */
         #settings-panel {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -94,10 +96,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 12px 0;
+            margin: 15px 0;
         }
 
-        .setting-item label { font-size: 0.85rem; color: #444; margin: 0; font-weight: 500;}
+        .setting-item label { font-size: 0.9rem; color: #444; margin: 0; font-weight: 500;}
 
         .nickname-input {
             width: 100%;
@@ -111,142 +113,161 @@
 
         .settings-area {
             background: var(--input-bg);
-            padding: 10px;
+            padding: 12px;
             border-radius: 18px;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             border: 1.5px solid var(--primary-color);
             transition: all 0.3s ease;
         }
 
-        .input-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-end; }
+        .input-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-end; }
         .input-group { flex: 1; text-align: left; }
-        .edit-box-wrapper { width: 55px; text-align: left; }
+        .edit-box-wrapper { width: 60px; text-align: left; }
 
         label {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--primary-color);
             display: block;
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         input[type="date"], input[type="number"] {
             width: 100%;
-            padding: 6px 5px;
+            padding: 8px 5px;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #444;
             outline: none;
             box-sizing: border-box;
             background-color: #fff;
-            min-height: 32px;
+            min-height: 35px;
         }
 
+        /* Professional Clock Box */
         .today-box {
             background: linear-gradient(135deg, #a2d2ff, #7ab6ff);
-            padding: 12px;
+            padding: 20px;
             border-radius: 24px;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.05), 0 10px 20px rgba(122, 182, 255, 0.3);
         }
 
         .date-display { 
             font-weight: 700; 
-            font-size: 0.85rem; 
+            font-size: 1.5rem; 
             background: rgba(255,255,255,0.2); 
-            padding: 3px 10px; 
+            padding: 4px 12px; 
             border-radius: 20px;
             backdrop-filter: blur(5px);
         }
 
+        /* Professional Analog Clock UI */
         .analog-clock {
-            width: 130px; /* Reduced from 150px to save space */
-            height: 130px;
-            border: 5px solid var(--clock-border);
+            width: 140px;
+            height: 140px;
+            border: 6px solid var(--clock-border);
             border-radius: 50%;
             position: relative;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 15px rgba(255,255,255,0.2);
         }
 
         .clock-dot {
             position: absolute;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             text-align: center;
         }
         .clock-dot::before {
-            content: ""; display: inline-block;
-            width: 1.5px; height: 5px;
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 6px;
             background: rgba(255,255,255,0.4);
-            margin-top: 1px;
+            margin-top: 2px;
         }
         .clock-dot.hour-mark::before {
-            width: 2.5px; height: 8px;
+            width: 3px;
+            height: 10px;
             background: #fff;
+            box-shadow: 0 0 5px rgba(255,255,255,0.5);
         }
         
         .clock-number {
             position: absolute;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             text-align: center;
-            font-size: 0.75rem; 
+            font-size: 0.85rem;
             font-weight: 700;
-            padding: 14px;
+            padding: 18px;
             box-sizing: border-box;
             z-index: 2;
             color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .analog-clock .hand {
             position: absolute;
-            bottom: 50%; left: 50%;
+            bottom: 50%;
+            left: 50%;
             transform-origin: bottom;
             border-radius: 10px;
             z-index: 5;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
         }
-        .hour-hand { width: 4px; height: 30px; background: #fff; }
-        .min-hand { width: 3px; height: 45px; background: rgba(255,255,255,0.8); }
-        .sec-hand { width: 1.5px; height: 52px; background: #ff4d4d !important; z-index: 7; }
+        .hour-hand { width: 5px; height: 35px; background: #fff; }
+        .min-hand { width: 3.5px; height: 55px; background: rgba(255,255,255,0.8); }
+        .sec-hand { 
+            width: 2px; height: 62px; 
+            background: #ff4d4d !important; 
+            z-index: 7;
+        }
         
         .center-dot {
             position: absolute;
             top: 50%; left: 50%;
-            width: 8px; height: 8px;
-            background: #fff; border: 2px solid #ff4d4d;
+            width: 10px; height: 10px;
+            background: #fff;
+            border: 2px solid #ff4d4d;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
         }
 
+        /* Digital Clock Style */
         .digital-clock {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 800;
+            letter-spacing: 2px;
             display: none;
             background: rgba(0,0,0,0.05);
-            padding: 8px 15px;
+            padding: 10px 20px;
             border-radius: 15px;
         }
 
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .card { padding: 10px 8px; border-radius: 20px; border: 2px solid transparent; }
+        .card { padding: 1px 1px; border-radius: 20px; border: 2px solid transparent; }
         .past { background: #fff5f7; border-color: #ffdae3; }
         .rem { background: #f2fff6; border-color: #d1f7e0; }
-        .card b { font-size: 0.8rem; display: block; margin-bottom: 3px; }
-        .label { font-size: 0.7rem; color: #666; margin-top: 5px; display: block; }
-        .val { font-size: 1.4rem; font-weight: 900; color: #222; display: block; }
+        .card b { font-size: 0.85rem; letter-spacing: 1px; display: block; margin-bottom: 1px; }
+        .label { font-size: 0.75rem; color: #666; margin-top: 1px; display: block; }
+        .val { font-size: 1.65rem; font-weight: 900; color: #222; display: block; }
 
-        .progress-container { margin-top: 15px; }
-        .bar-bg { width: 100%; background: #eee; height: 12px; border-radius: 10px; overflow: hidden; }
+        .progress-container { margin-top: 25px; }
+        .bar-bg { width: 100%; background: #eee; height: 14px; border-radius: 10px; overflow: hidden; }
         .bar-fill { height: 100%; background: var(--primary-color); width: 0%; transition: width 1s; }
-        .perc-display { font-size: 0.85rem; font-weight: 800; color: var(--primary-color); margin-top: 5px; display: block; }
+        .perc-display { font-size: 0.9rem; font-weight: 800; color: var(--primary-color); margin-top: 8px; display: block; }
 
-        /* Settings Toggle Switch */
+        /* Custom Switch */
         .switch { position: relative; display: inline-block; width: 38px; height: 20px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
@@ -254,8 +275,24 @@
         input:checked + .slider { background-color: var(--primary-color); }
         input:checked + .slider:before { transform: translateX(18px); }
 
-        .btn-save { background: var(--primary-color); color: white; border: none; padding: 10px; border-radius: 14px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; }
-        .btn-reset { background: #fff5f5; color: #ff4d4d; border: 1px solid #ffd1d1; padding: 8px; border-radius: 14px; font-size: 0.8rem; cursor: pointer; margin-top: 10px; font-weight: 600; width: 100%;}
+        .btn-save { background: var(--primary-color); color: white; border: none; padding: 12px; border-radius: 14px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; }
+        .btn-reset { background: #fff5f5; color: #ff4d4d; border: 1px solid #ffd1d1; padding: 10px; border-radius: 14px; font-size: 0.85rem; cursor: pointer; margin-top: 15px; font-weight: 600; width: 100%;}
+
+        #reset-modal {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            z-index: 50;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content { background: white; padding: 25px; width: 80%; border-radius: 22px; text-align: center; }
+        .theme-dots { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; max-width: 200px; }
+        .dot { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+        .dot.active { border-color: #333; transform: scale(1.2); }
     </style>
 </head>
 <body>
@@ -263,22 +300,68 @@
 <div class="container">
     <div class="settings-btn" onclick="toggleSettings(true)">⚙️</div>
     
+    <div id="reset-modal">
+        <div class="modal-content">
+            <div style="font-size: 2.5rem;">⚠️</div>
+            <h3 style="margin: 10px 0;">Reset All Data?</h3>
+            <p style="font-size: 0.85rem; color: #777;">This will clear everything permanently.</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button style="flex:1; padding:12px; border-radius:12px; border:none; background:#eee;" onclick="closeResetModal()">Cancel</button>
+                <button style="flex:1; padding:12px; border-radius:12px; border:none; background:#ff4d4d; color:white;" onclick="confirmReset()">Yes, Reset</button>
+            </div>
+        </div>
+    </div>
+
     <div id="settings-panel">
         <div class="settings-header">
             <h3 style="margin:0; color:var(--primary-color)">Settings</h3>
             <span style="cursor:pointer; font-size:1.5rem" onclick="toggleSettings(false)">&times;</span>
         </div>
+
         <span class="setting-section-title">Personalization</span>
         <div class="setting-item" style="flex-direction:column; align-items:flex-start;">
             <label>Baby Nickname</label>
             <input type="text" id="baby-name-input" class="nickname-input" placeholder="e.g. My Little Angel" oninput="saveSettings()">
         </div>
-        <div class="setting-item" style="flex-direction:column; align-items:flex-start;">
+
+        <div class="setting-item" style="flex-direction:column; align-items:flex-start; margin-top: 10px;">
             <label>Father's Name</label>
             <input type="text" id="father-name-input" class="nickname-input" placeholder="Enter Father's Name" oninput="saveSettings()">
         </div>
+
+<div class="setting-item">
+    <label>Theme Color</label>
+    <div class="theme-dots" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 5px;">
+        <div class="dot" style="background:#ff85a2; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#ff85a2')">
         
-        <span class="setting-section-title">Show/Hide Features</span>
+        </div>
+        <div class="dot" style="background:#7ab6ff; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#7ab6ff')"></div>
+        <div class="dot" style="background:#9b5de5; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#9b5de5')"></div>
+        <div class="dot" style="background:#00b894; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#00b894')"></div>
+        <div class="dot" style="background:#fdcb6e; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#fdcb6e')"></div>
+        <div class="dot" style="background:#e84393; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#e84393')"></div>
+        
+        <div class="dot" style="background:#ff7675; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#ff7675')"></div>
+        <div class="dot" style="background:#2d3436; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#2d3436')"></div>
+        <div class="dot" style="background:#6c5ce7; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#6c5ce7')"></div>
+        <div class="dot" style="background:#fab1a0; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#fab1a0')"></div>
+        <div class="dot" style="background:#00cec9; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#00cec9')"></div>
+        <div class="dot" style="background:#55efc4; width:22px; height:22px; border-radius:50%; cursor:pointer; border:1px solid #ddd;" onclick="setTheme('#55efc4')"></div>
+    </div>
+</div>
+
+
+        <span class="setting-section-title">Clock Settings</span>
+        <div class="setting-item">
+            <label>Enable Digital Clock (AM/PM)</label>
+            <label class="switch">
+                <input type="checkbox" id="digital-clock-toggle" onchange="saveSettings()">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <span class="setting-section-title">Preferences</span>
+        
         <div class="setting-item">
             <label>Show Father's Name</label>
             <label class="switch">
@@ -286,21 +369,29 @@
                 <span class="slider"></span>
             </label>
         </div>
+
         <div class="setting-item">
-            <label>Enable Digital Clock</label>
+            <label>Auto-Sync Due Date</label>
             <label class="switch">
-                <input type="checkbox" id="digital-clock-toggle" onchange="saveSettings()">
+                <input type="checkbox" id="sync-toggle" onchange="saveSettings()">
                 <span class="slider"></span>
             </label>
         </div>
+
+        <div class="setting-item">
+            <label>Show "+Days" Box</label>
+            <label class="switch">
+                <input type="checkbox" id="show-extra-toggle" onchange="saveSettings()">
+                <span class="slider"></span>
+            </label>
+        </div>
+
         <button class="btn-save" onclick="toggleSettings(false)">SAVE & CLOSE</button>
-        <button class="btn-reset" onclick="confirmReset()">RESET ALL DATA</button>
+        <button class="btn-reset" onclick="openResetModal()">RESET ALL DATA</button>
     </div>
 
     <h2 id="main-title">Pregnancy Tracker 🌸</h2>
-    <div id="father-name-display"></div>
-    
-    <div class="settings-area">
+    <div id="father-name-display"></div> <div class="settings-area">
         <div class="input-row">
             <div class="input-group">
                 <label>START DATE (LMP)</label>
@@ -321,12 +412,14 @@
 
     <div class="today-box">
         <div class="date-display">📅 <span id="show-today">--/--/----</span></div>
+        
         <div id="analog-ui" class="analog-clock">
             <div class="hand hour-hand" id="hour-hand"></div>
             <div class="hand min-hand" id="min-hand"></div>
             <div class="hand sec-hand" id="sec-hand"></div>
             <div class="center-dot"></div>
         </div>
+
         <div id="digital-ui" class="digital-clock">00:00:00 AM</div>
     </div>
 
@@ -354,13 +447,21 @@
 <script>
     window.onload = function() {
         createClockMarkers();
+        
         document.getElementById('input-start').value = localStorage.getItem('pregStart') || "2025-08-18";
         document.getElementById('input-due').value = localStorage.getItem('pregDue') || "2026-05-31";
         document.getElementById('extra-rem').value = localStorage.getItem('extraRem') || "0";
         document.getElementById('baby-name-input').value = localStorage.getItem('babyName') || "";
+        
+        // Load Father's Name Data
         document.getElementById('father-name-input').value = localStorage.getItem('fatherName') || "";
         document.getElementById('show-father-toggle').checked = localStorage.getItem('showFather') === 'true';
+
+        document.getElementById('sync-toggle').checked = localStorage.getItem('syncOn') === 'true';
+        document.getElementById('show-extra-toggle').checked = localStorage.getItem('showExtra') === 'true';
         document.getElementById('digital-clock-toggle').checked = localStorage.getItem('isDigital') === 'true';
+        
+        setTheme(localStorage.getItem('themeColor') || '#ff85a2');
         applySettingsUI();
         calculate();
         startClock();
@@ -370,7 +471,8 @@
         const clock = document.getElementById('analog-ui');
         for (let i = 0; i < 60; i++) {
             const dot = document.createElement('div');
-            dot.className = 'clock-dot' + (i % 5 === 0 ? ' hour-mark' : '');
+            dot.className = 'clock-dot';
+            if (i % 5 === 0) dot.className += ' hour-mark';
             dot.style.transform = `rotate(${i * 6}deg)`;
             clock.appendChild(dot);
         }
@@ -386,23 +488,41 @@
     function startClock() {
         setInterval(() => {
             const now = new Date();
-            let h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
-            const ampm = h >= 12 ? 'PM' : 'AM';
-            let dh = h % 12 || 12;
-            document.getElementById('digital-ui').innerText = `${dh}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${ampm}`;
+            let hours = now.getHours();
+            const mins = String(now.getMinutes()).padStart(2, '0');
+            const secs = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; 
+            document.getElementById('digital-ui').innerText = `${hours}:${mins}:${secs} ${ampm}`;
+            const s = now.getSeconds();
+            const m = now.getMinutes();
+            const h = now.getHours();
             document.getElementById('sec-hand').style.transform = `translateX(-50%) rotate(${s * 6}deg)`;
             document.getElementById('min-hand').style.transform = `translateX(-50%) rotate(${m * 6 + s * 0.1}deg)`;
-            document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${(h % 12) * 30 + m/2}deg)`;
+            document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${h * 30 + m/2}deg)`;
         }, 1000);
     }
 
-    function toggleSettings(show) { document.getElementById('settings-panel').style.display = show ? 'flex' : 'none'; }
+    function setTheme(color) {
+        document.documentElement.style.setProperty('--primary-color', color);
+        localStorage.setItem('themeColor', color);
+        document.documentElement.style.setProperty('--input-bg', color + "15");
+    }
+
+    function toggleSettings(show) {
+        document.getElementById('settings-panel').style.display = show ? 'flex' : 'none';
+    }
 
     function saveSettings() {
+        localStorage.setItem('syncOn', document.getElementById('sync-toggle').checked);
+        localStorage.setItem('showExtra', document.getElementById('show-extra-toggle').checked);
+        localStorage.setItem('isDigital', document.getElementById('digital-clock-toggle').checked);
         localStorage.setItem('babyName', document.getElementById('baby-name-input').value);
+        
+        // Save Father's Name Settings
         localStorage.setItem('fatherName', document.getElementById('father-name-input').value);
         localStorage.setItem('showFather', document.getElementById('show-father-toggle').checked);
-        localStorage.setItem('isDigital', document.getElementById('digital-clock-toggle').checked);
+        
         applySettingsUI();
     }
 
@@ -411,48 +531,84 @@
         document.getElementById('digital-ui').style.display = isDigital ? 'block' : 'none';
         document.getElementById('analog-ui').style.display = isDigital ? 'none' : 'block';
         
+        document.getElementById('extra-box-ui').style.display = document.getElementById('show-extra-toggle').checked ? 'block' : 'none';
+        
         const bName = document.getElementById('baby-name-input').value;
         document.getElementById('main-title').innerText = bName ? bName + " 🌸" : "Pregnancy Tracker 🌸";
-        
+
+        // Father's Name UI Logic
         const fName = document.getElementById('father-name-input').value;
-        const showF = document.getElementById('show-father-toggle').checked;
-        const fDisplay = document.getElementById('father-name-display');
-        fDisplay.innerText = fName ? "Father: " + fName : "";
-        fDisplay.style.display = (showF && fName) ? "block" : "none";
+        const showFather = document.getElementById('show-father-toggle').checked;
+        const fatherDisplay = document.getElementById('father-name-display');
+        
+        if(showFather && fName) {
+            fatherDisplay.innerText = "Father: " + fName;
+            fatherDisplay.style.display = "block";
+        } else {
+            fatherDisplay.style.display = "none";
+        }
     }
 
+    function openResetModal() { document.getElementById('reset-modal').style.display = 'flex'; }
+    function closeResetModal() { document.getElementById('reset-modal').style.display = 'none'; }
+    function confirmReset() { localStorage.clear(); location.reload(); }
+
     function syncDates(type) {
-        const sInput = document.getElementById('input-start'), dInput = document.getElementById('input-due');
-        if(type==='start') { let d = new Date(sInput.value); d.setDate(d.getDate()+280); dInput.value = d.toISOString().split('T')[0]; }
+        if (!document.getElementById('sync-toggle').checked) { calculate(); return; }
+        const startInput = document.getElementById('input-start');
+        const dueInput = document.getElementById('input-due');
+        if (type === 'start' && startInput.value) {
+            let d = new Date(startInput.value);
+            d.setDate(d.getDate() + 280);
+            dueInput.value = d.toISOString().split('T')[0];
+        } else if (type === 'due' && dueInput.value) {
+            let d = new Date(dueInput.value);
+            d.setDate(d.getDate() - 280);
+            startInput.value = d.toISOString().split('T')[0];
+        }
         calculate();
     }
 
     function calculate() {
         const startVal = document.getElementById('input-start').value;
         const dueVal = document.getElementById('input-due').value;
-        const ex = parseInt(document.getElementById('extra-rem').value) || 0;
+        const exRem = parseInt(document.getElementById('extra-rem').value) || 0;
         if(!startVal || !dueVal) return;
-        const start = new Date(startVal), due = new Date(dueVal);
-        due.setDate(due.getDate() + ex);
-        const today = new Date(); today.setHours(0,0,0,0);
+        
+        const start = new Date(startVal);
+        const due = new Date(dueVal);
+        let finalDue = new Date(due);
+        finalDue.setDate(finalDue.getDate() + exRem);
+        
+        const today = new Date();
+        today.setHours(0,0,0,0);
         document.getElementById('show-today').innerText = today.toLocaleDateString('en-GB');
-        const diffP = today - start, diffR = due - today, total = due - start;
-        const getD = (ms) => Math.max(0, Math.floor(ms/86400000));
-        const getW = (ms) => Math.max(0, (ms/604800000).toFixed(1));
-        const getM = (ms) => Math.max(0, (ms/2629746000).toFixed(1));
-        document.getElementById('p-d').innerText = getD(diffP);
-        document.getElementById('p-w').innerText = getW(diffP);
-        document.getElementById('p-m').innerText = getM(diffP);
-        document.getElementById('r-d').innerText = getD(diffR);
-        document.getElementById('r-w').innerText = getW(diffR);
-        document.getElementById('r-m').innerText = getM(diffR);
-        let prog = Math.min(Math.max((diffP/total)*100, 0), 100);
+
+        const diffPast = today - start;
+        const diffRem = finalDue - today;
+        const total = finalDue - start;
+
+        const getDays = (ms) => Math.max(0, Math.floor(ms / 86400000));
+        const getWeeks = (ms) => Math.max(0, (ms / 604800000).toFixed(1));
+        const getMonths = (ms) => Math.max(0, (ms / 2629746000).toFixed(1));
+
+        document.getElementById('p-d').innerText = getDays(diffPast);
+        document.getElementById('p-w').innerText = getWeeks(diffPast);
+        document.getElementById('p-m').innerText = getMonths(diffPast);
+        document.getElementById('r-d').innerText = getDays(diffRem);
+        document.getElementById('r-w').innerText = getWeeks(diffRem);
+        document.getElementById('r-m').innerText = getMonths(diffRem);
+        
+        let prog = (diffPast / total) * 100;
+        prog = Math.min(Math.max(prog, 0), 100);
         document.getElementById('bar').style.width = prog + "%";
         document.getElementById('perc-val').innerText = prog.toFixed(1) + "% Completed";
-        localStorage.setItem('pregStart', startVal); localStorage.setItem('pregDue', dueVal); localStorage.setItem('extraRem', ex);
+        
+        localStorage.setItem('pregStart', startVal);
+        localStorage.setItem('pregDue', dueVal);
+        localStorage.setItem('extraRem', exRem);
     }
-
-    function confirmReset() { if(confirm("Reset all data?")) { localStorage.clear(); location.reload(); } }
 </script>
+
 </body>
 </html>
